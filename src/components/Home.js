@@ -13,11 +13,15 @@ const Home = React.createClass({
     },
 
     render: function () {
+        var trendsArr = [];
+        for(var i = 0; i < 10; i++) {
+            trendsArr.push(this.props.trendsData[i]);
+        }
         return (
             <div className="columns">
 
                 <div className='column'>
-                    <Leftbar profileData={this.props.userData} trending={this.props.trendsData} loading={this.props.loadingTrendsData} />   
+                    <Leftbar profileData={this.props.userData} trending={trendsArr} loading={this.props.loadingTrendsData} />   
                 </div>
                 <div className='column'>
                     <Midbar />   

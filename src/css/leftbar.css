@@ -1,0 +1,11 @@
+.profile-card {
+    border: 2px solid cornflowerblue;
+    display: inline-block;
+}
+
+.sidebar {
+    display: inline-block;
+    padding: 50px;
+    width: 200px;
+}
+

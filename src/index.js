@@ -17,6 +17,8 @@ import 'font-awesome/css/font-awesome.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/main.css';
 import './css/profileCard.css';
+import './css/trends.css';
+import './css/leftbar.css';
 
 
 

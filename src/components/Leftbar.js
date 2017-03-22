@@ -6,7 +6,7 @@ import Trends from './Trends';
 const Leftbar = React.createClass({
     render: function () {
         return (
-            <div>
+            <div className='leftbar'>
                 {this.generateUser(this.props.profileData)}
                 <Trends trends={this.props.trending} loading={this.props.loading}/>
             </div>
