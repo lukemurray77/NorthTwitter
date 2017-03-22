@@ -1,0 +1,33 @@
+body {
+    background-color: #F5F8FA;
+}
+
+.icons-ul {
+    list-style: none;
+    height: 48px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.icons-ul li {
+    display: inline-block;
+    height: 100%;
+    padding-right: 15px;
+    line-height: 48px;
+    color: #66757F;
+}
+
+.icons-ul li:hover {
+    border-bottom: 2px solid gold;
+    cursor: pointer;
+}
+
+.nav-link {
+    padding-left: 10px;
+}
+
+.navbar {
+    background-color: white;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    border-radius: 0px;
+}

@@ -1,12 +1,17 @@
 import React from 'react';
+import NavBar from './Navbar';
 
 
 const App = React.createClass({
-    render: function() {
+    render: function () {
         return (
-            <h1>hello</h1>
-        )
+            <div>
+                <NavBar />
+                {this.props.children}
+            </div>
+
+        );
     }
-})
+});
 
 export default App;
