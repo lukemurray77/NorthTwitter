@@ -1,14 +1,24 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {fetchTrendsData} from '../actions/actions';
+
 import ProfileCard from './ProfileCard';
 import Trends from './Trends';
 
 
 const Leftbar = React.createClass({
+    componentDidMount () {
+        this.props.getTrendsData();
+    },
     render: function () {
+        const trendArr = [];
+        for (var i = 0; i < 10; i++) {
+            trendArr.push(this.props.trendsData[i]);
+        }
         return (
             <div className='leftbar'>
                 {this.generateUser(this.props.profileData)}
-                <Trends trends={this.props.trending} loading={this.props.loading}/>
+                <Trends trends={trendArr} loading={this.props.loadingTrendsData}/>
             </div>
         );
     },
@@ -28,8 +38,22 @@ const Leftbar = React.createClass({
     }
 });
 
+function mapDispatchToProps (dispatch) {
+    return {
+        getTrendsData: () => {
+            dispatch(fetchTrendsData());
+        }
+    };
+}
+
+function mapStateToProps (state) {
+    return {
+        trendsData: state.trendData.trendsData,
+        loadingTrendsData: state.trendData.loadingTrendsData
+    };
+}
 
 
+export default connect(mapStateToProps, mapDispatchToProps)(Leftbar);
 
 
-export default Leftbar;

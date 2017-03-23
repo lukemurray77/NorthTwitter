@@ -2,7 +2,6 @@ import React from 'react';
 
 const ProfileCard = React.createClass({
     render: function () {
-        console.log(this.props.userName)
         return (
             <div className="col-xs-12 profile-card-container">
 

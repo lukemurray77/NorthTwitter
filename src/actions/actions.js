@@ -69,3 +69,37 @@ export function fetchTrendsDataError (err) {
         data: err
     };
 }
+
+export function fetchTweetData () {
+    return function (dispatch) {
+        dispatch(fetchTweetsDataRequest());
+        axios
+            .get('https://protected-oasis-31937.herokuapp.com/tweets')
+            .then (res => {
+                dispatch(fetchTweetsDataSuccess(res.data));
+            })
+            .catch(err => {
+                dispatch(fetchTweetsDataError(err));
+            });
+    };
+}
+
+export function fetchTweetsDataRequest () {
+    return {
+        type: types.FETCH_TWEETS_REQUEST,
+    };
+}
+
+export function fetchTweetsDataSuccess (TweetsData) {
+    return {
+        type: types.FETCH_TWEETS_SUCCESS,
+        data: TweetsData
+
+    };
+}
+export function fetchTweetsDataError (err) {
+    return {
+        type: types.FETCH_TWEETS_ERROR,
+        data: err
+    };
+}
